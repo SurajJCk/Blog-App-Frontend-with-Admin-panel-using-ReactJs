@@ -21,30 +21,40 @@ export default function Header() {
   return (
     <nav>
       <div className="container nav-container">
-        <Link className="nav-logo" to={"/"}>
+        <Link className="nav-logo" to={"/"} onClick={closeNavHandler}>
           <h3>
             SJC <span>Blog</span>
           </h3>
         </Link>
-        <ul className="nav-menu">
-          <li>
-            <Link to={"/profile/id"}>Surajjck</Link>
-          </li>
-          <li>
-            <Link to={"/create"}>CreatePosts</Link>
-          </li>
-          <li>
-            <Link to={"/authors"}>Authors</Link>
-          </li>
-          <li>
-            <Link to={"/logout"}>Logout</Link>
-          </li>
-        </ul>
+        {isNavShow && (
+          <ul className="nav-menu">
+            <li>
+              <Link to={"/profile/id"} onClick={closeNavHandler}>
+                Surajjck
+              </Link>
+            </li>
+            <li>
+              <Link to={"/create"} onClick={closeNavHandler}>
+                CreatePosts
+              </Link>
+            </li>
+            <li>
+              <Link to={"/authors"} onClick={closeNavHandler}>
+                Authors
+              </Link>
+            </li>
+            <li>
+              <Link to={"/logout"} onClick={closeNavHandler}>
+                Logout
+              </Link>
+            </li>
+          </ul>
+        )}
         <button
           className="nav-toggle-button"
           onClick={() => setIsNavShow(!isNavShow)}
         >
-          {isNavShow ? <FaBars /> : <IoMdClose />}
+          {isNavShow ? <IoMdClose /> : <FaBars />}
         </button>
       </div>
     </nav>
