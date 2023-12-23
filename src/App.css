@@ -564,6 +564,16 @@ footer{
         width: 100%;
         box-shadow: -2rem 4rem 4rem rgba(0, 0, blue, 0.26);
     }
+    .nav-menu li a {
+        display: block;
+        background: var(--color-primary)
+        padding-box1.4rem 4.2rem;
+    }
+    .nav-toggle-button{
+        display: inline-block;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
 }
 /* ..............End Media Screen.................. */
 

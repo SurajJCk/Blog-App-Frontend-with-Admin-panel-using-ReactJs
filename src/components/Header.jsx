@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
+// React Icons
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
 export default function Header() {
+  const [isNavShow, setIsNavShow] = useState(
+    window.innerWidth > 1024 ? true : false
+  );
+
+  const closeNavHandler = () => {
+    if (window.innerWidth < 1024) {
+      setIsNavShow(false);
+    } else {
+      setIsNavShow(true);
+    }
+  };
+
   return (
     <nav>
       <div className="container nav-container">
@@ -25,9 +40,11 @@ export default function Header() {
             <Link to={"/logout"}>Logout</Link>
           </li>
         </ul>
-        <button className="nav-toggle-button">
-          <FaBars />
-          <IoMdClose />
+        <button
+          className="nav-toggle-button"
+          onClick={() => setIsNavShow(!isNavShow)}
+        >
+          {isNavShow ? <FaBars /> : <IoMdClose />}
         </button>
       </div>
     </nav>
