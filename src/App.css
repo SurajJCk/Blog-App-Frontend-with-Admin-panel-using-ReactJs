@@ -200,8 +200,13 @@ nav{
 }
 .head-post-container .post-image{
     height: fit-content;
-
+    border: 1rem solid var(--color-white);
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.1);
 }
+.head-post-container .post-image{
+ border-radius: var(--border-radius-3);
+}
+
 .head-post-container h1{
     margin-bottom: 1.7rem;
     font-size: 2.4rem;
@@ -540,7 +545,7 @@ footer{
 /* .............. Media Screen - 1024px.................. */
 @media(max-width:1024px){
     h1{
-        font-size: 1.5rem !important;
+        font-size: 1.8rem !important;
     }
     h2{
         font-size: 1.4rem !important;
@@ -604,6 +609,9 @@ footer{
     .head-post-container{
         gap: 2rem;
     }
+    .head-post-container h1{
+        font-size: 2rem;
+    }
     .post-container{
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
@@ -631,6 +639,12 @@ footer{
     .form-container{
         width: 70%;
     }
+    /* ..........Dashboard Container........... */
+    .dashboard-post{
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
 }
 /* .....................Media Screen - 600px........... */
 @media (max-width:600px) {
@@ -656,7 +670,9 @@ footer{
     }
     /* ..........PostDetalils........... */
     .postDetail-container{
-        width: 70%;
+        width: 90%;
+        background: transparent;
+        padding: 0;
     }
     /* ..........Author........... */
     .author-container{
@@ -666,6 +682,12 @@ footer{
     /* ..........Form Container........... */
     .form-container{
         width: 90%;
+    }
+    /* ..........Dashboard Container........... */
+    .dashboard-post{
+        flex-direction: column;
+        align-items: flex-start;
+
     }
 }
 
