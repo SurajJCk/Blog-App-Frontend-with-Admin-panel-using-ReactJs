@@ -6,7 +6,7 @@ import { useState } from "react";
 
 //Components.....................
 import PostItem from "./PostItem";
-import HeadPost from "./HeadPost";
+import Headpost from "./Headpost";
 
 export default function Posts() {
   const [posts, setPosts] = useState(DummyPosts);
@@ -14,7 +14,7 @@ export default function Posts() {
     <section className="posts">
       {/* ................Head Post................. */}
       <div className="head-post-aria">
-        <HeadPost />
+        <Headpost />
       </div>
 
       {posts.length > 0 ? (
